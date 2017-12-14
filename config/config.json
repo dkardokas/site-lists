@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/siteLists/SiteListsWebPart.js",
+      "manifest": "./src/webparts/siteLists/SiteListsWebPart.manifest.json",
+      "outputPath": "./dist/site-lists-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "SiteListsWebPartStrings": "webparts/siteLists/loc/{locale}.js"
+  }
+}

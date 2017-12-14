@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.0",
+    "libraryName": "site-lists",
+    "libraryId": "dc0adff8-f841-4686-aee5-3d47f719e4ea",
+    "environment": "onprem"
+  }
+}

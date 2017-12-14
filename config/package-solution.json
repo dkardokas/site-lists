@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "site-lists-client-side-solution",
+    "id": "dc0adff8-f841-4686-aee5-3d47f719e4ea",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/site-lists.sppkg"
+  }
+}
