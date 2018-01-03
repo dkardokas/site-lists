@@ -21,7 +21,8 @@ export default class SiteListsWebPart extends BaseClientSideWebPart<ISiteListsWe
     const element: React.ReactElement<ISiteListsProps > = React.createElement(
       SiteLists,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        context: this.context
       }
     );
 
