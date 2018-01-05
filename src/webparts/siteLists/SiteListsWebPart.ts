@@ -6,6 +6,7 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
+import SPData from '../../bl/SPData';
 
 import * as strings from 'SiteListsWebPartStrings';
 import SiteLists from './components/SiteLists';
@@ -18,15 +19,25 @@ export interface ISiteListsWebPartProps {
 export default class SiteListsWebPart extends BaseClientSideWebPart<ISiteListsWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<ISiteListsProps > = React.createElement(
-      SiteLists,
-      {
-        description: this.properties.description,
-        context: this.context
-      }
-    );
+    let spdata = new SPData(this.context);
+    const listsElem = spdata.getAllLists().then((listData) => {
+      var listsHtml = '';
+      listData.value.forEach(element => {
+        listsHtml += element.Title + " | ";
+      });
+      const element: React.ReactElement<ISiteListsProps> = React.createElement(
+        SiteLists,
+        {
+          description: this.properties.description,
+          context: this.context,
+          siteLists: listsHtml
+        }
+      );
 
-    ReactDom.render(element, this.domElement);
+      ReactDom.render(element, this.domElement);
+    });
+
+
   }
 
   protected get dataVersion(): Version {
